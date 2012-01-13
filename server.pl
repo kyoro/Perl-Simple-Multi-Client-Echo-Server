@@ -45,7 +45,7 @@ tcp_server(undef, 3535, sub {
     );
     my $connection_id = $host.':'.$port;
     $hdl->{_connection_id} = $connection_id;
-    $connection_pool{$pool_key} = $hdl;
+    $connection_pool{$connection_id} = $hdl;
     warn "available connections : ".keys(%connection_pool)."\n";
 });
 
